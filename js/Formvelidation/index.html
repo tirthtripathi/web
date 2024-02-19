@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">My Form</h1>
+    <form id="myform">
+
+       <div>
+        <input type="text" name="username" placeholder="Enter Username...">
+       </div>
+       <div>
+        <input type="email" name="email" placeholder="Enter Email...">
+       </div>
+       <div>
+        <input type="password" name="password" placeholder="Enter Password...">
+       </div>
+       <div>
+        <input type="radio" name="gender" value="male"/> Male
+        <input type="radio" name="gender" value="female"> Female
+       </div>
+       <div>
+          <button type="submit">Register</button>
+       </div>
+    </form>
+
+    <script>
+          let form = document.querySelector("#myform")
+          form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let formData = new FormData(e.target);
+                let formObj = Object.fromEntries(formData);
+                let jsondata = JSON.stringify(formObj);
+
+                console.log(jsondata);
+
+          })
+    </script>
+
+</body>
+</html>
